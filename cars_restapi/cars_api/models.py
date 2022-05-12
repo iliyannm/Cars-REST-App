@@ -1,10 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
+from cars_restapi.cars_api.managers import SoftDeleteManager
 
 UserModel = get_user_model()
-
-from cars_restapi.cars_api.managers import SoftDeleteManager
 
 NAME_MAX_LENGTH = 20
 
@@ -79,6 +78,16 @@ class UserCar(models.Model):
     car_brand = models.ForeignKey(
         CarBrand,
         on_delete=models.CASCADE,
+    )
+
+    first_reg = models.DateTimeField(
+        blank=True,
+        null=True,
+    )
+
+    odometer = models.IntegerField(
+        blank=True,
+        null=True,
     )
 
     created_at = models.DateTimeField(
