@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
-from cars_restapi.cars_api.managers import SoftDeleteManager
 
 UserModel = get_user_model()
 
@@ -23,12 +22,6 @@ class CarBrand(models.Model):
         null=True,
         default=None
     )
-
-    def soft_delete(self):
-        self.deleted_at = timezone.now()
-        self.save()
-
-    objects = SoftDeleteManager()
 
 
 class CarModel(models.Model):
@@ -55,12 +48,6 @@ class CarModel(models.Model):
         null=True,
         default=None
     )
-
-    def soft_delete(self):
-        self.deleted_at = timezone.now()
-        self.save()
-
-    objects = SoftDeleteManager()
 
 
 class UserCar(models.Model):
@@ -100,8 +87,3 @@ class UserCar(models.Model):
         default=None
     )
 
-    def soft_delete(self):
-        self.deleted_at = timezone.now()
-        self.save()
-
-    objects = SoftDeleteManager()

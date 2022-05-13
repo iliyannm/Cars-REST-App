@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    # 'rest_framework.authtoken',
+    
     'cars_restapi.cars_api',
     'cars_restapi.accounts',
 ]
@@ -36,6 +38,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#     ],
+# }
 
 ROOT_URLCONF = 'cars_restapi.urls'
 
