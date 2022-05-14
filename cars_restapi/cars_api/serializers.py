@@ -12,3 +12,9 @@ class CarModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = CarModel
         fields = '__all__'
+
+
+class UserCarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserCar
+        fields = ('car_model', 'car_brand')

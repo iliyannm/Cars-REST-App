@@ -23,6 +23,9 @@ class CarBrand(models.Model):
         default=None
     )
 
+    def __str__(self):
+        return self.name
+
 
 class CarModel(models.Model):
 
@@ -48,6 +51,9 @@ class CarModel(models.Model):
         null=True,
         default=None
     )
+
+    def __str__(self):
+        return self.name
 
 
 class UserCar(models.Model):
